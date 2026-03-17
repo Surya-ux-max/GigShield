@@ -1,12 +1,13 @@
 /* ================================
-   App Container & Layout
+   Modern Dark App Styles
    ================================ */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 50%, #fef3c7 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
   background-attachment: fixed;
+  color: #f1f5f9;
 }
 
 .main-content {
