@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaShieldAlt, FaBars, FaTimes } from 'react-icons/fa'
+import { FaHeartbeat, FaBars, FaTimes } from 'react-icons/fa'
 import { useAuth } from '../stores'
 
 const Navbar: React.FC = () => {
@@ -18,79 +18,80 @@ const Navbar: React.FC = () => {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white shadow-xl">
+    <nav className="sticky top-0 z-50 bg-white border-b border-red-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-2xl font-bold hover:opacity-80 transition-opacity">
-            <div className="p-2 bg-white bg-opacity-20 rounded-xl">
-              <FaShieldAlt size={24} />
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center shadow-md group-hover:bg-red-700 transition-colors">
+              <FaHeartbeat className="text-white text-lg" />
             </div>
-            <span>GigShield</span>
+            <div className="flex flex-col leading-none">
+              <span className="text-xl font-bold text-red-600 tracking-tight">Carely</span>
+              <span className="text-[10px] text-gray-400 font-medium tracking-wide">Insurance that cares</span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-semibold transition-all duration-300 relative pb-2 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
-                    ? 'text-white'
-                    : 'text-blue-100 hover:text-white'
+                    ? 'bg-red-600 text-white shadow-sm'
+                    : 'text-gray-600 hover:bg-red-50 hover:text-red-600'
                 }`}
               >
                 {link.label}
-                {isActive(link.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full"></div>
-                )}
               </Link>
             ))}
           </div>
 
           {/* User Section */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {user ? (
               <div className="hidden sm:flex items-center gap-3">
-                <div className="px-4 py-2 bg-white bg-opacity-15 rounded-lg">
-                  <span className="text-sm font-semibold">{user.name}</span>
+                <div className="px-3 py-1.5 bg-red-50 rounded-lg border border-red-100">
+                  <span className="text-sm font-semibold text-red-700">{user.name}</span>
                 </div>
                 <button
                   onClick={() => logout()}
-                  className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm"
                 >
                   Logout
                 </button>
               </div>
             ) : (
-              <button className="px-4 py-2 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 shadow-md">
+              <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm">
                 Login
               </button>
             )}
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-white hover:bg-opacity-10 rounded-lg transition-all"
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-red-50 hover:text-red-600 transition-all"
             >
-              {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+              {mobileMenuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2 border-t border-white border-opacity-20 pt-4">
+          <div className="md:hidden pb-4 pt-2 border-t border-red-50 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 rounded-lg transition-all ${
+                className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   isActive(link.path)
-                    ? 'bg-white bg-opacity-20 font-semibold'
-                    : 'hover:bg-white hover:bg-opacity-10'
+                    ? 'bg-red-600 text-white'
+                    : 'text-gray-600 hover:bg-red-50 hover:text-red-600'
                 }`}
               >
                 {link.label}
@@ -98,11 +99,8 @@ const Navbar: React.FC = () => {
             ))}
             {user && (
               <button
-                onClick={() => {
-                  logout()
-                  setMobileMenuOpen(false)
-                }}
-                className="w-full text-left px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg transition-all font-semibold"
+                onClick={() => { logout(); setMobileMenuOpen(false) }}
+                className="w-full text-left px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition-all"
               >
                 Logout
               </button>

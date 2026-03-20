@@ -1,47 +1,81 @@
 import React from 'react'
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaHeartbeat, FaTwitter, FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-lg font-bold mb-4">GigShield AI</h3>
-            <p className="text-gray-400">Parametric insurance for gig workers</p>
+    <footer className="bg-gray-900 text-white mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center">
+                <FaHeartbeat className="text-white text-lg" />
+              </div>
+              <span className="text-xl font-bold text-white">Carely</span>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Parametric insurance for gig workers. Instant protection, zero paperwork.
+            </p>
+            <div className="flex gap-3 mt-4">
+              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors">
+                <FaTwitter size={14} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors">
+                <FaLinkedin size={14} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors">
+                <FaGithub size={14} />
+              </a>
+            </div>
           </div>
 
+          {/* Product */}
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition">Features</a></li>
-              <li><a href="#" className="hover:text-white transition">Pricing</a></li>
-              <li><a href="#" className="hover:text-white transition">Security</a></li>
+            <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Product</h4>
+            <ul className="space-y-2.5">
+              {['Features', 'Pricing', 'Security', 'API'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-400 text-sm hover:text-red-400 transition-colors">{item}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition">About</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
+            <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Company</h4>
+            <ul className="space-y-2.5">
+              {['About', 'Blog', 'Careers', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-400 text-sm hover:text-red-400 transition-colors">{item}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Follow</h4>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-blue-400 transition"><FaTwitter size={20} /></a>
-              <a href="#" className="hover:text-blue-600 transition"><FaFacebook size={20} /></a>
-              <a href="#" className="hover:text-blue-500 transition"><FaLinkedin size={20} /></a>
-              <a href="#" className="hover:text-gray-400 transition"><FaGithub size={20} /></a>
+            <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+              <FaEnvelope size={12} className="text-red-400" />
+              <span>suryapr.exe14@gmail.com</span>
+            </div>
+            <div className="mt-4 p-3 bg-red-600 bg-opacity-10 border border-red-600 border-opacity-20 rounded-xl">
+              <p className="text-red-400 text-xs font-medium">Built for Guidewire Hackathon</p>
+              <p className="text-gray-400 text-xs mt-0.5">Sri Eshwar College of Engineering</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; 2026 GigShield AI. All rights reserved.</p>
+        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-gray-500 text-sm">&copy; 2026 Carely. All rights reserved.</p>
+          <div className="flex items-center gap-1 text-gray-500 text-sm">
+            <span>Made with</span>
+            <FaHeartbeat className="text-red-500 mx-1" size={12} />
+            <span>by Team AG6</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,134 +1,239 @@
-
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Link } from 'react-router-dom'
-import { FaShieldAlt, FaBolt, FaHeartbeat, FaChartLine, FaArrowRight, FaCheck } from 'react-icons/fa'
+import { FaHeartbeat, FaBolt, FaShieldAlt, FaChartLine, FaArrowRight, FaCheck, FaUsers, FaRupeeSign } from 'react-icons/fa'
+import CityScene3D from '../components/CityScene3D'
+import PhoneModel3D from '../components/PhoneModel3D'
+
+
+const Loader = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-red-200 border-t-red-600 rounded-full animate-spin" />
+  </div>
+)
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen overflow-hidden">
-      {/* Hero Section */}
-      <div className="relative py-32 md:py-40 px-4 overflow-hidden">
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    <div className="min-h-screen bg-white overflow-x-hidden">
+
+      {/* ════════════════════════════════
+          HERO
+      ════════════════════════════════ */}
+      <section className="relative bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[78vh]">
+
+            {/* Left — Copy */}
+            <div className="relative z-10 pb-16">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-red-50 border border-red-100 rounded-full mb-10">
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-red-600 text-sm font-semibold tracking-wide">Parametric Insurance · Gig Workers</span>
+              </div>
+
+              <h1 className="text-[3.6rem] md:text-[4.5rem] lg:text-[5rem] font-black text-gray-950 leading-[1.05] tracking-tight mb-7">
+                Insurance<br />
+                that <span className="text-red-600">truly</span><br />
+                <span className="text-red-600">cares.</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-10 max-w-md font-light">
+                Instant income protection when disruptions hit — rain, traffic, platform outages. No paperwork. Just automatic support.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-12">
+                <Link to="/worker" className="btn-primary text-base px-8 py-4 rounded-2xl shadow-lg shadow-red-200">
+                  Get Protected Now <FaArrowRight />
+                </Link>
+                <Link to="/admin" className="btn-outline text-base px-8 py-4 rounded-2xl">
+                  View Dashboard
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap gap-7">
+                {['No paperwork', 'Instant payouts', 'AI-powered'].map((t, i) => (
+                  <div key={i} className="flex items-center gap-2 text-gray-400 text-sm font-medium">
+                    <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaCheck className="text-red-600 text-[9px]" />
+                    </div>
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — 3D City */}
+            <div className="relative h-[520px] lg:h-[620px]">
+              <div className="absolute top-5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3.5 py-1.5 bg-white/90 backdrop-blur border border-red-100 rounded-full shadow-sm">
+                <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-[11px] font-semibold text-red-600 tracking-wide">Live Network — Gig Workers Connected</span>
+              </div>
+              <Suspense fallback={<Loader />}>
+                <CityScene3D />
+              </Suspense>
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-5 z-10 bg-white/80 backdrop-blur px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-1.5 text-[11px] text-gray-500 font-medium">
+                  <span className="w-2.5 h-2.5 bg-red-600 rounded-full" /> Worker Node
+                </div>
+                <div className="flex items-center gap-1.5 text-[11px] text-gray-500 font-medium">
+                  <span className="w-5 h-px bg-red-400 block" /> Insurance Link
+                </div>
+                <div className="flex items-center gap-1.5 text-[11px] text-gray-500 font-medium">
+                  <span className="w-2.5 h-2.5 bg-red-200 rounded-sm block" /> City Zone
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">
-              <span className="text-gradient">GigShield AI</span>
-            </h1>
-            <p className="text-2xl md:text-3xl text-slate-300 mb-8 font-light">
-              Parametric Insurance for Gig Workers
-            </p>
-            <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Instant protection against income disruption. Get covered, get verified, get paid—all in minutes using AI-powered risk assessment.
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/worker" className="btn-primary flex items-center justify-center gap-2 group">
-                Worker Portal
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/admin" className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 border-2 border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 hover:-translate-y-1">
-                Admin Dashboard
+      </section>
+
+      {/* ════════════════════════════════
+          STATS
+      ════════════════════════════════ */}
+      <section className="bg-red-600 py-16">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            {[
+              { icon: FaUsers,     value: '100K+', label: 'Workers Protected' },
+              { icon: FaRupeeSign, value: '₹5Cr+', label: 'Claims Processed'  },
+              { icon: FaShieldAlt, value: '99.9%', label: 'Platform Uptime'   },
+            ].map((s, i) => (
+              <div key={i} className="flex flex-col items-center gap-2">
+                <s.icon className="text-red-300 text-xl mb-1" />
+                <p className="text-5xl font-black text-white tracking-tight">{s.value}</p>
+                <p className="text-red-200 text-sm font-medium tracking-wide uppercase">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════
+          FEATURES
+      ════════════════════════════════ */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <p className="text-red-600 text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Carely</p>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Built for gig workers,<br />by design</h2>
+            <p className="text-gray-400 mt-5 max-w-lg mx-auto text-lg font-light">Every feature is crafted to protect your income when real-world disruptions happen.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: FaBolt,      title: 'Instant Claims', desc: 'Automatic detection and verification. No forms to fill.',       bg: 'bg-red-50',    ic: 'text-red-600'    },
+              { icon: FaChartLine, title: 'AI Powered',     desc: 'ML models detect disruptions in real-time across your zone.',   bg: 'bg-orange-50', ic: 'text-orange-500' },
+              { icon: FaHeartbeat, title: 'Always On',      desc: 'Coverage active 24/7. We monitor so you can focus on work.',    bg: 'bg-rose-50',   ic: 'text-rose-500'   },
+              { icon: FaShieldAlt, title: 'Fraud Safe',     desc: 'Multi-layer AI fraud detection keeps the system fair for all.', bg: 'bg-red-50',    ic: 'text-red-700'    },
+            ].map((f, i) => (
+              <div key={i} className="group bg-white border border-gray-100 rounded-3xl p-7 hover:border-red-200 hover:shadow-xl hover:shadow-red-50 hover:-translate-y-2 transition-all duration-300">
+                <div className={`w-13 h-13 w-12 h-12 ${f.bg} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <f.icon className={`${f.ic} text-xl`} />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 tracking-tight">{f.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════
+          HOW IT WORKS
+      ════════════════════════════════ */}
+      <section className="py-28 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <p className="text-red-600 text-xs font-bold uppercase tracking-[0.2em] mb-3">Process</p>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">How it works</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left — Steps */}
+            <div className="space-y-6">
+              {[
+                {
+                  step: '01',
+                  title: 'Subscribe to a Plan',
+                  desc: 'Choose a daily, weekly or monthly coverage plan. Takes under 60 seconds to activate.',
+                  detail: 'Plans from ₹5/day',
+                },
+                {
+                  step: '02',
+                  title: 'Stay Protected 24/7',
+                  desc: 'We continuously monitor weather, traffic, AQI and platform status in your zone.',
+                  detail: 'Zero manual effort',
+                },
+                {
+                  step: '03',
+                  title: 'Get Paid Instantly',
+                  desc: 'Disruption confirmed? Your payout is triggered automatically — no claim needed.',
+                  detail: '₹450 transferred in minutes',
+                },
+              ].map((item, i) => (
+                <div key={i} className={`flex gap-5 p-6 rounded-2xl transition-all duration-300 ${i === 2 ? 'bg-red-600 text-white shadow-xl shadow-red-200' : 'bg-white border border-gray-100 hover:border-red-100 hover:shadow-md'}`}>
+                  <div className={`text-4xl font-black leading-none flex-shrink-0 ${i === 2 ? 'text-red-300' : 'text-red-100'}`}>
+                    {item.step}
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-bold mb-1.5 tracking-tight ${i === 2 ? 'text-white' : 'text-gray-900'}`}>{item.title}</h3>
+                    <p className={`text-sm leading-relaxed mb-2 ${i === 2 ? 'text-red-100' : 'text-gray-400'}`}>{item.desc}</p>
+                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${i === 2 ? 'bg-white/20 text-white' : 'bg-red-50 text-red-600'}`}>
+                      {item.detail}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right — 3D Phone */}
+            <div className="relative">
+              <div className="relative h-[520px] bg-gradient-to-br from-gray-50 via-red-50/30 to-white rounded-3xl border border-red-100 shadow-2xl shadow-red-100 overflow-hidden">
+                {/* glow blob */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-200 rounded-full blur-3xl opacity-20 pointer-events-none" />
+                <Suspense fallback={<Loader />}>
+                  <PhoneModel3D />
+                </Suspense>
+                {/* LIVE badge */}
+                <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-lg">
+                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" /> LIVE
+                </div>
+                {/* bottom label */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur border border-red-100 rounded-full px-4 py-1.5 shadow-sm">
+                  <p className="text-xs font-semibold text-gray-600">₹450 payout · Rain disruption · Chennai South</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════
+          CTA
+      ════════════════════════════════ */}
+      <section className="py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="bg-red-600 rounded-[2rem] p-14 md:p-20 relative overflow-hidden text-center">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-red-500 rounded-full -translate-y-1/2 translate-x-1/3 opacity-25 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-56 h-56 bg-red-800 rounded-full translate-y-1/2 -translate-x-1/3 opacity-20 pointer-events-none" />
+            <div className="relative z-10">
+              <FaHeartbeat className="text-red-300 text-4xl mx-auto mb-7" />
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-5 leading-tight">
+                Ready to get<br />protected?
+              </h2>
+              <p className="text-red-200 mb-10 text-lg font-light max-w-sm mx-auto">
+                Join thousands of gig workers earning with confidence every day.
+              </p>
+              <Link to="/worker" className="btn-white text-base px-10 py-4 rounded-2xl shadow-xl">
+                Start Today <FaArrowRight />
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Features Section */}
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          <span className="text-gradient">Why Choose GigShield?</span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: FaBolt, title: 'Instant Claims', desc: 'No paperwork. Automatic detection and verification.', color: 'cyan' },
-            { icon: FaChartLine, title: 'AI Powered', desc: 'ML models detect disruptions in real-time.', color: 'purple' },
-            { icon: FaHeartbeat, title: 'Always Available', desc: 'Coverage when you need it most.', color: 'pink' },
-            { icon: FaShieldAlt, title: 'Fraud Protected', desc: 'Advanced fraud detection keeps everyone safe.', color: 'green' },
-          ].map((feature, i) => {
-            const Icon = feature.icon
-            const colorMap: { [key: string]: string } = {
-              cyan: 'from-cyan-500 to-blue-500',
-              purple: 'from-purple-500 to-pink-500',
-              pink: 'from-pink-500 to-red-500',
-              green: 'from-green-500 to-emerald-500',
-            }
-            return (
-              <div key={i} className="card-glass group hover:shadow-glow-purple">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colorMap[feature.color]} flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform`}>
-                  <Icon />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* How It Works */}
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        <h2 className="text-4xl font-boldtext-center mb-16">
-          <span className="text-gradient">How It Works</span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { step: '01', title: 'Subscribe', desc: 'Choose a coverage plan tailored to your needs' },
-            { step: '02', title: 'Get Protected', desc: 'Instant coverage starts immediately' },
-            { step: '03', title: 'Claim & Earn', desc: 'Get paid within minutes of disruption detection' },
-          ].map((item, i) => (
-            <div key={i} className="relative">
-              <div className="card-glass text-center h-full">
-                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-2xl font-semibold mb-3 text-white">{item.title}</h3>
-                <p className="text-slate-400">{item.desc}</p>
-              </div>
-              {i < 2 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <FaArrowRight className="text-cyan-500 text-3xl" />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Statistics */}
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { value: '100K+', label: 'Happy Workers' },
-            { value: '₹5Cr+', label: 'Claims Processed' },
-            { value: '99.9%', label: 'Uptime' },
-          ].map((stat, i) => (
-            <div key={i} className="stat-card text-center">
-              <div className="text-4xl font-bold text-cyan-300 mb-2">{stat.value}</div>
-              <div className="text-slate-400">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="max-w-4xl mx-auto px-4 py-20">
-        <div className="card-glass border-2 border-cyan-400/50 text-center py-16">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Protected?</h2>
-          <p className="text-slate-400 mb-8">Join thousands of gig workers earning with confidence</p>
-          <Link to="/worker" className="btn-primary inline-flex items-center justify-center gap-2">
-            Start Your First Claim
-            <FaArrowRight />
-          </Link>
-        </div>
-      </div>
     </div>
   )
 }
