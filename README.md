@@ -1,3 +1,4 @@
+Important Information - Frontend is Deployed , backend is stil in develeper Environment , Advising not to Clone - Team Carely & AG6
 # Carely  
 ### *“An Insurance that truly cares”*  
 > A Insurance Solution for Gig workers in guidance of Guidewire
