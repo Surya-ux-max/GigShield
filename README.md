@@ -1,97 +1,84 @@
-# 🛡️ GigShield
-
-### AI-Powered Parametric Insurance for Gig Workers
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![AI Powered](https://img.shields.io/badge/AI-powered-orange.svg)]()
+# Carely  
+### *“An Insurance that truly cares”*  
+> A Insurance Solution for Gig workers in guidance of Guidewire
 
 ---
+## Institution Name  
+Sri Eshwar College of Engineering  
 
+---
+## Team Details  
+- **Team Name:** AG6  
+- **Team Leader:** Reegan Ferdinand  
+
+### Team Members  
+- Suryaprakash S  
+- Srivarshan R  
+- Tamilselvan P
+  
+---
 ## 📋 Table of Contents
-
 - [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
+- [Problem](#-problem)
 - [Our Solution](#-our-solution)
 - [Key Features](#-key-features)
-- [System Workflow](#-system-workflow)
-- [Data Sources](#-data-sources)
-- [Competitive Advantage](#-competitive-advantage)
-- [Expected Impact](#-expected-impact)
-- [Future Enhancements](#-future-enhancements)
+- [System workflow](#-System-workflow)
+- [Data Sources](#-Data-Sources)
+- [Competitive Advantage](#-Competitive-Advantage)
+- [Expected Impact](#-Expected-Impact)
 
 ---
+##  Overview
 
-## 🌟 Overview
+Imagine a delivery partner starting their day.
 
-**GigShield** is an AI-powered parametric insurance platform designed to protect gig economy delivery workers from income loss caused by external disruptions.
+They log in, ready to earn.
 
-### The Challenge
+But suddenly:
+- 🌧️ Heavy rain starts  
+- 🔥 Extreme heat slows movement  
+- 📱 App goes down  
+- 🚦 Traffic blocks deliveries  
 
-Delivery partners on platforms like **Swiggy**, **Zomato**, **Amazon**, and **Zepto** depend on daily deliveries for their livelihood. Their income is vulnerable to uncontrollable external conditions:
+At the end of the day — **less work, less income.**
 
-- 🌡️ **Extreme heat**
-- 🌧️ **Heavy rainfall**
-- 💨 **Air pollution**
-- 🚦 **Traffic congestion**
-- 📱 **Platform downtime**
-- 🚫 **Curfews or zone restrictions**
+👉 Not their fault.  
+👉 No safety net.
 
-These disruptions reduce delivery orders and working hours, causing **direct income loss** for gig workers.
-
-### Our Approach
-
-GigShield introduces a **parametric insurance system powered by AI** that automatically detects disruption events and provides **instant payouts** when income loss is verified.
-
-> **⚠️ Important:** GigShield covers **income loss only**. It does NOT cover health insurance, accidents, vehicle repairs, or medical expenses.
+**Carely exists to solve this.**
 
 ---
+## Problem
 
-## 🚨 Problem Statement
+Gig workers:
+- ❌ Don’t have stable income  
+- ❌ Don’t have insurance for income loss  
+- ❌ Are affected by real-world disruptions daily  
 
-### The Gig Worker Dilemma
+Even one bad day can mean:
+> 💸 Loss of essential daily earnings  
 
-Gig workers operate under an "independent contractor" model, lacking traditional employment benefits:
-
-| ❌ Missing Benefits | 📉 Impact |
-|---------------------|-----------|
-| Stable wages | Income uncertainty |
-| Job security | No safety net |
-| Social protection | Financial vulnerability |
-| Income protection | 20-30% weekly income loss during disruptions |
-
-### Key Challenges
-
-- 💸 Irregular wages
-- ⏰ Uncertain work availability
-- 🤖 Algorithm-based performance pressure
-- 🏥 Lack of social security coverage
-- 🌍 Limited protection during environmental disruptions
-
-Despite policy initiatives like the **Code on Social Security 2020**, practical mechanisms for real-time income protection remain limited.
+There is **no system today that protects their income in real-time.**
 
 ---
-
 ## 💡 Our Solution
 
-GigShield is an **AI-driven parametric insurance platform** that:
+**Carely** is a **parametric insurance platform** designed for gig workers.
+It:
 
-```
-✅ Provides weekly insurance coverage to delivery workers
-✅ Monitors real-time environmental and operational data
-✅ Uses AI models to detect income disruption risk
-✅ Automatically triggers insurance claims when disruption occurs
-✅ Instantly transfers payouts to workers
-```
+✅ Monitors real-world conditions
+✅ Detects disruptions automatically
+✅ Verifies income impact
+✅ Instantly provides payouts
 
-**Fast. Automated. Fair.** No manual claim submissions required.
+No paperwork.  
+No claims process.  
+Just **automatic support when needed.**
 
 ---
-
 ## 🔑 Key Features
 
 ### 1. 🤖 AI-Powered Risk Assessment
-
 An AI model evaluates environmental and operational factors to calculate a **disruption risk score**.
 
 **Input Factors:**
@@ -114,8 +101,7 @@ An AI model evaluates environmental and operational factors to calculate a **dis
 ---
 
 ### 2. 📍 Zone-Adaptive Disruption Thresholds
-
-Environmental conditions vary significantly between cities and zones. GigShield uses **historical zone data** to determine dynamic disruption thresholds.
+Environmental conditions vary significantly between cities and zones. Carely uses **historical zone data** to determine dynamic disruption thresholds.
 
 **Example Thresholds:**
 
@@ -129,10 +115,8 @@ Environmental conditions vary significantly between cities and zones. GigShield 
 > 💡 Thresholds are dynamically adjusted based on historical disruption patterns and delivery activity data.
 
 ---
-
 ### 3. ✅ Context-Aware Parametric Trigger System
-
-Traditional parametric insurance can trigger false payouts. GigShield uses **two-layer verification**:
+Traditional parametric insurance can trigger false payouts. Carely uses **two-layer verification**:
 
 #### **Layer 1: Environmental Trigger** 🌍
 
@@ -147,7 +131,6 @@ platform_status == "down"
 #### **Layer 2: Delivery Activity Validation** 📦
 
 Even if conditions are extreme, the system verifies whether delivery activity actually dropped.
-
 **Metrics Analyzed:**
 - Deliveries per hour
 - Active delivery partners
@@ -157,9 +140,7 @@ Even if conditions are extreme, the system verifies whether delivery activity ac
 ✅ **Disruption confirmed** only if delivery activity decreases significantly compared to historical data.
 
 ---
-
 ### 4. 🔒 Intelligent Fraud Detection
-
 Multiple verification layers prevent fraudulent claims:
 
 | Check | Purpose |
@@ -175,9 +156,7 @@ IF claim_reason == "rain"
    AND rainfall < threshold
 THEN fraud_flag = TRUE
 ```
-
 ---
-
 ### 5. ⚡ Automated Claim Processing & Instant Payouts
 
 When a disruption event is confirmed:
@@ -192,9 +171,7 @@ When a disruption event is confirmed:
 - Stripe (sandbox)
 
 ---
-
 ## 🔄 System Workflow
-
 ```mermaid
 graph TD
     A[Worker Onboarding] --> B[Data Monitoring]
@@ -224,28 +201,25 @@ graph TD
 9. **Instant Payout** - Worker receives compensation automatically
 
 ---
-
 ## 📊 Data Sources
 
-### 🌍 Environmental Data
+### Environmental Data
 - Weather APIs (rainfall, temperature)
 - AQI data
 - Pollution levels
 
-### 🚗 Operational Data
+### Operational Data
 - Traffic congestion index
 - Delivery demand
 - Active riders
 
-### 📱 Platform Data (Simulated)
+### Platform Data (Simulated)
 - Order volume
 - Delivery acceptance rate
 - Platform uptime
 
 ---
-
 ## 🏆 Competitive Advantage
-
 ### Existing Solutions
 
 Parametric insurance exists in:
@@ -259,9 +233,9 @@ Parametric insurance exists in:
 - Existing gig worker income protection covers illness, disability, unemployment
 - Do NOT address environment-based income disruptions
 
-### How GigShield is Different
+### How Carely is Different
 
-| Feature | Traditional Parametric Insurance | GigShield |
+| Feature | Traditional Parametric Insurance | Carely |
 |---------|----------------------------------|-----------|
 | Trigger mechanism | Single threshold | Two-layer verification |
 | Threshold type | Fixed | Zone-adaptive |
@@ -270,97 +244,22 @@ Parametric insurance exists in:
 | Payment cycle | Monthly/Annual | Weekly micro-insurance |
 | AI integration | ❌ Limited | ✅ Core feature |
 
-**Key Innovations:**
-
-1. 🤖 **AI-Driven Disruption Verification** - Machine learning analyzes environmental and operational signals
-2. 📍 **Zone-Adaptive Thresholds** - Dynamically adjust based on historical conditions
-3. 📦 **Delivery Activity Validation** - Environmental triggers must correspond to actual drops in delivery demand
-4. 🔒 **Automated Fraud Detection** - Multiple validation layers ensure accurate and fair payouts
-5. 💰 **Weekly Micro-Insurance Model** - Matches the weekly earnings cycle of gig workers
-
 ---
-
 ## 🎯 Expected Impact
-
-GigShield can:
-
+Carely can:
 - 💪 **Reduce financial instability** for gig workers
 - ⚡ **Provide rapid support** during disruptions
 - 🤝 **Increase trust** in platform work ecosystems
 - 🌍 **Promote inclusive financial protection** in the gig economy
 
 ---
-
-## 🚀 Future Enhancements
-
-Potential features on the roadmap:
-
-- 🔮 **Predictive disruption alerts** - Warn workers before disruptions occur
-- 🎯 **AI-based premium personalization** - Customized pricing based on individual risk profiles
-- 🏛️ **Government welfare integration** - Connect with social security programs
-- 📊 **Worker analytics dashboards** - Insights into earnings and disruption patterns
-- 🤝 **Platform partnerships** - Direct integration with delivery platforms
-
----
-
 ## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the (LICENSE) file for details.
 
 ---
-
 ## 🤝 Contributing
-
 Contributions, issues, and feature requests are welcome!
 
 ---
-
 ## 📧 Contact
-
-For questions or support, please reach out to the GigShield team.
-
----
-
-## 🚀 Implementation Status
-
-**✅ COMPLETE** - Full backend implementation with:
-- 46 REST API endpoints
-- 8 database models
-- 2 ML models (XGBoost + Isolation Forest)
-- 6 service classes
-- Complete documentation
-- Ready for local + production deployment
-
-### 📁 What's Included
-```
-├── backend/              FastAPI backend
-├── QUICKSTART.md        5-minute local setup guide
-├── API_REFERENCE.md     Complete API documentation
-├── ARCHITECTURE.md      System design details
-├── IMPLEMENTATION.md    Implementation details
-└── INDEX.md            Complete project index
-```
-
-### ⚡ Quick Start
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
-# Edit .env with PostgreSQL password
-python run.py
-# API: http://localhost:8000/docs
-```
-
-👉 **[View Implementation Guide](IMPLEMENTATION.md)** | **[Quick Start](QUICKSTART.md)** | **[API Reference](API_REFERENCE.md)**
-
----
-
-<div align="center">
-
-**Built with ❤️ for gig workers**
-
-⭐ Star this repo if you support fair income protection for gig workers!
-
-</div>
+For questions or support, please reach out to the Carely Team - Mail - suryapr.exe14@gmail.com || carelycustomersupport@gmail.com(coming soon)
