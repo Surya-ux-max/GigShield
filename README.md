@@ -29,6 +29,9 @@ Sri Eshwar College of Engineering
 - [Expected Impact](#-Expected-Impact)
 
 ---
+Video Pitch link - https://drive.google.com/drive/folders/1NAUF1Ty0_cNgpx7Oqu7h4SO5_mY7TxAw?usp=drive_link
+---
+---
 ##  Overview
 
 Imagine a delivery partner starting their day.
