@@ -36,11 +36,11 @@ class Settings(BaseSettings):
     weather_check_interval_minutes: int = 60
     delivery_data_check_interval_minutes: int = 30
     
-    model_config = ConfigDict(
-        env_file=".env",
-        case_sensitive=False,
-        extra="ignore"
-    )
+model_config = ConfigDict(
+    env_file=".env",
+    case_sensitive=False,
+    extra="ignore"
+)
 
 
 settings = Settings()
