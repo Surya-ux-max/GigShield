@@ -1,11 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { FaTimes } from 'react-icons/fa'
 import i18n from '../i18n'
 
 const LANGUAGES = [
-  { code: 'en', label: 'English',  native: 'English',  flag: '🇬🇧' },
-  { code: 'ta', label: 'Tamil',    native: 'தமிழ்',    flag: '🇮🇳' },
-  { code: 'hi', label: 'Hindi',    native: 'हिंदी',    flag: '🇮🇳' },
+  { code: 'en', label: 'English', native: 'English', flag: '🇬🇧' },
+  { code: 'ta', label: 'Tamil',   native: 'தமிழ்',   flag: '🇮🇳' },
+  { code: 'hi', label: 'Hindi',   native: 'हिंदी',   flag: '🇮🇳' },
 ]
 
 interface Props {
@@ -22,9 +23,22 @@ const LanguagePickerModal: React.FC<Props> = ({ onClose }) => {
     onClose()
   }
 
+  // Allow closing without changing if a language was already saved
+  const canDismiss = !!localStorage.getItem('carely_lang')
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 animate-fade-in">
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 relative">
+
+        {/* Dismiss button — only shown if language already set */}
+        {canDismiss && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-red-50 rounded-lg flex items-center justify-center text-gray-400 hover:text-red-600 transition-colors"
+          >
+            <FaTimes className="text-xs" />
+          </button>
+        )}
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
@@ -50,14 +64,14 @@ const LanguagePickerModal: React.FC<Props> = ({ onClose }) => {
               }`}
             >
               <span className="text-2xl">{lang.flag}</span>
-              <div className="text-left">
+              <div className="text-left flex-1">
                 <p className={`font-bold text-sm ${selected === lang.code ? 'text-red-600' : 'text-gray-900'}`}>
                   {lang.native}
                 </p>
                 <p className="text-gray-400 text-xs">{lang.label}</p>
               </div>
               {selected === lang.code && (
-                <div className="ml-auto w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
+                <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>

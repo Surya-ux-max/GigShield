@@ -32,7 +32,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         {showLangPicker && <LanguagePickerModal onClose={() => setShowLangPicker(false)} />}
-        <Navbar />
+        <Navbar onOpenLangPicker={() => setShowLangPicker(true)} />
         <main className="flex-1">
           <Routes>
             <Route path="/"       element={<HomePage />} />
