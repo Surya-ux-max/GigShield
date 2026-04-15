@@ -152,7 +152,7 @@ const WorkerPortal: React.FC = () => {
                   <FaRupeeSign className="text-green-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Instant Payout</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_instant_payout')}</p>
                   <p className="text-lg font-black text-gray-900">₹450 <span className="text-green-500 text-xs font-bold">PAID</span></p>
                 </div>
               </div>
@@ -163,8 +163,8 @@ const WorkerPortal: React.FC = () => {
                   <FaShieldAlt className="text-red-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Coverage</p>
-                  <p className="text-sm font-black text-gray-900">Active · 24/7</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_coverage')}</p>
+                  <p className="text-sm font-black text-gray-900">{t('wp_card_coverage_val')}</p>
                 </div>
               </div>
 
@@ -174,8 +174,8 @@ const WorkerPortal: React.FC = () => {
                   <FaCloudRain className="text-orange-500" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Disruption Detected</p>
-                  <p className="text-sm font-black text-gray-900">Heavy Rain · Zone 4</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_disruption')}</p>
+                  <p className="text-sm font-black text-gray-900">{t('wp_card_disruption_val')}</p>
                 </div>
               </div>
 
@@ -185,8 +185,8 @@ const WorkerPortal: React.FC = () => {
                   <FaClock className="text-blue-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Claim Processed</p>
-                  <p className="text-sm font-black text-gray-900">In 2 minutes</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_claim_processed')}</p>
+                  <p className="text-sm font-black text-gray-900">{t('wp_card_claim_val')}</p>
                 </div>
               </div>
 
@@ -196,8 +196,8 @@ const WorkerPortal: React.FC = () => {
                   <FaChartLine className="text-purple-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Risk Score</p>
-                  <p className="text-sm font-black text-gray-900">0.82 · HIGH</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_risk')}</p>
+                  <p className="text-sm font-black text-gray-900">{t('wp_card_risk_val')}</p>
                 </div>
               </div>
 
@@ -207,15 +207,15 @@ const WorkerPortal: React.FC = () => {
                   <FaMotorcycle className="text-red-600" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium">Platform</p>
-                  <p className="text-sm font-black text-gray-900">Online · Active</p>
+                  <p className="text-xs text-gray-400 font-medium">{t('wp_card_platform')}</p>
+                  <p className="text-sm font-black text-gray-900">{t('wp_card_platform_val')}</p>
                 </div>
               </div>
 
               {/* bottom badge */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/90 backdrop-blur border border-red-100 rounded-full px-4 py-2 shadow-md whitespace-nowrap">
                 <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-xs font-semibold text-gray-600">Protected by Carely · AI-Powered</span>
+                <span className="text-xs font-semibold text-gray-600">{t('wp_card_protected')}</span>
               </div>
             </div>
           </div>
@@ -356,12 +356,12 @@ const WorkerPortal: React.FC = () => {
               {PLANS.map((plan, i) => {
                 const popular = i === 1
                 const features = [
-                  `${plan.duration_days} day${plan.duration_days > 1 ? 's' : ''} coverage`,
-                  `₹${plan.payout_amount} max payout`,
-                  'Instant claim processing',
-                  'AI fraud protection',
-                  popular ? 'Priority support' : null,
-                  popular ? 'Zone-adaptive triggers' : null,
+                  `${plan.duration_days} ${plan.duration_days > 1 ? t('wp_plan_coverage_days_plural') : t('wp_plan_coverage_days')}`,
+                  `₹${plan.payout_amount} ${t('wp_plan_max_payout')}`,
+                  t('wp_plan_instant_claim'),
+                  t('wp_plan_ai_fraud'),
+                  popular ? t('wp_plan_priority') : null,
+                  popular ? t('wp_plan_zone') : null,
                 ].filter(Boolean) as string[]
 
                 return (
@@ -386,12 +386,12 @@ const WorkerPortal: React.FC = () => {
                           ₹{plan.premium_amount}
                         </span>
                         <span className={`text-sm mb-2 ${popular ? 'text-red-200' : 'text-gray-400'}`}>
-                          /{plan.duration_days === 1 ? 'day' : plan.duration_days === 7 ? 'week' : 'month'}
+                          /{plan.duration_days === 1 ? t('wp_plan_period_day') : plan.duration_days === 7 ? t('wp_plan_period_week') : t('wp_plan_period_month')}
                         </span>
                       </div>
                       <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold mb-6 ${popular ? 'bg-white/20 text-white' : 'bg-red-50 text-red-600'}`}>
                         <FaRupeeSign className="text-[10px]" />
-                        Up to ₹{plan.payout_amount} payout
+                        {t('wp_plan_upto')} ₹{plan.payout_amount} {t('wp_plan_payout_suffix')}
                       </div>
 
                       <ul className="space-y-3 mb-8">
@@ -469,10 +469,10 @@ const WorkerPortal: React.FC = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-50 border-b border-gray-100">
-                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">Claim</th>
-                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">Amount</th>
-                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">Date</th>
-                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">Status</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">{t('wp_col_claim')}</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">{t('wp_col_amount')}</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">{t('wp_col_date')}</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-wider">{t('wp_col_status')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50">
@@ -499,8 +499,8 @@ const WorkerPortal: React.FC = () => {
             ) : (
               <div className="bg-white rounded-3xl border border-gray-100 p-16 text-center">
                 <FaClipboard className="text-gray-200 text-5xl mx-auto mb-4" />
-                <h3 className="text-lg font-black text-gray-900 mb-2">No Claims Yet</h3>
-                <p className="text-gray-400 text-sm">When a disruption is detected in your zone, claims will appear here automatically.</p>
+                <h3 className="text-lg font-black text-gray-900 mb-2">{t('wp_no_claims_title')}</h3>
+                <p className="text-gray-400 text-sm">{t('wp_no_claims_desc')}</p>
               </div>
             )}
           </div>

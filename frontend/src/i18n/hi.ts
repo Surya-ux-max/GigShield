@@ -149,6 +149,42 @@ const hi = {
   trust_workers: '1 लाख+ वर्कर्स का भरोसा',
   cta_badge: '60 सेकंड में शुरू करें',
 
+  // WorkerPortal floating cards
+  wp_card_instant_payout: 'तुरंत भुगतान',
+  wp_card_coverage: 'कवरेज',
+  wp_card_coverage_val: 'सक्रिय · 24/7',
+  wp_card_disruption: 'रुकावट पकड़ी गई',
+  wp_card_disruption_val: 'भारी बारिश · ज़ोन 4',
+  wp_card_claim_processed: 'दावा प्रोसेस हुआ',
+  wp_card_claim_val: '2 मिनट में',
+  wp_card_risk: 'जोखिम स्कोर',
+  wp_card_risk_val: '0.82 · उच्च',
+  wp_card_platform: 'प्लेटफॉर्म',
+  wp_card_platform_val: 'ऑनलाइन · सक्रिय',
+  wp_card_protected: 'Carely सुरक्षित · AI-संचालित',
+
+  // WorkerPortal plans tab
+  wp_plan_coverage_days: 'दिन कवरेज',
+  wp_plan_coverage_days_plural: 'दिन कवरेज',
+  wp_plan_max_payout: 'अधिकतम भुगतान',
+  wp_plan_instant_claim: 'तुरंत दावा प्रोसेसिंग',
+  wp_plan_ai_fraud: 'AI धोखाधड़ी सुरक्षा',
+  wp_plan_priority: 'प्राथमिकता सहायता',
+  wp_plan_zone: 'ज़ोन-अनुकूलित ट्रिगर',
+  wp_plan_period_day: 'दिन',
+  wp_plan_period_week: 'सप्ताह',
+  wp_plan_period_month: 'महीना',
+  wp_plan_upto: 'तक',
+  wp_plan_payout_suffix: 'भुगतान',
+
+  // WorkerPortal claims table
+  wp_col_claim: 'दावा',
+  wp_col_amount: 'राशि',
+  wp_col_date: 'तारीख',
+  wp_col_status: 'स्थिति',
+  wp_no_claims_title: 'अभी तक कोई दावा नहीं',
+  wp_no_claims_desc: 'जब आपके क्षेत्र में रुकावट पकड़ी जाएगी, दावे यहाँ स्वचालित रूप से दिखेंगे।',
+
   // Language picker
   lang_title: 'अपनी भाषा चुनें',
   lang_subtitle: 'जारी रखने के लिए अपनी पसंदीदा भाषा चुनें',

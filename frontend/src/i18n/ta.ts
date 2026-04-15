@@ -149,6 +149,42 @@ const ta = {
   trust_workers: '1 லட்சம்+ தொழிலாளர்கள் நம்புகிறார்கள்',
   cta_badge: '60 வினாடிகளில் தொடங்குங்கள்',
 
+  // WorkerPortal floating cards
+  wp_card_instant_payout: 'உடனடி கட்டணம்',
+  wp_card_coverage: 'காப்பீடு',
+  wp_card_coverage_val: 'செயலில் · 24/7',
+  wp_card_disruption: 'இடையூறு கண்டறியப்பட்டது',
+  wp_card_disruption_val: 'கனமான மழை · மண்டலம் 4',
+  wp_card_claim_processed: 'கோரிக்கை செயலாக்கப்பட்டது',
+  wp_card_claim_val: '2 நிமிடங்களில்',
+  wp_card_risk: 'ஆபத்து மதிப்பெண்',
+  wp_card_risk_val: '0.82 · அதிகம்',
+  wp_card_platform: 'தளம்',
+  wp_card_platform_val: 'இணைய்ந்துள்ளது · செயலில்',
+  wp_card_protected: 'Carely பாதுகாப்பு · AI-இயக்கம்',
+
+  // WorkerPortal plans tab
+  wp_plan_coverage_days: 'நாள் காப்பீடு',
+  wp_plan_coverage_days_plural: 'நாட்கள் காப்பீடு',
+  wp_plan_max_payout: 'அதிகபட்ச கட்டணம்',
+  wp_plan_instant_claim: 'உடனடி கோரிக்கை செயலாக்கம்',
+  wp_plan_ai_fraud: 'AI மோசடி பாதுகாப்பு',
+  wp_plan_priority: 'முன்னுரிமை ஆதரவு',
+  wp_plan_zone: 'மண்டல எல்லை தூண்டல்கள்',
+  wp_plan_period_day: 'நாள்',
+  wp_plan_period_week: 'வாரம்',
+  wp_plan_period_month: 'மாதம்',
+  wp_plan_upto: 'வரை',
+  wp_plan_payout_suffix: 'கட்டணம்',
+
+  // WorkerPortal claims table
+  wp_col_claim: 'கோரிக்கை',
+  wp_col_amount: 'தொகை',
+  wp_col_date: 'தேதி',
+  wp_col_status: 'நிலை',
+  wp_no_claims_title: 'இன்னும் கோரிக்கைகள் இல்லை',
+  wp_no_claims_desc: 'உங்கள் மண்டலத்தில் இடையூறு கண்டறியப்பட்டால், கோரிக்கைகள் இங்கே தானாகவே தோன்றும்.',
+
   // Language picker
   lang_title: 'உங்கள் மொழியை தேர்வு செய்யுங்கள்',
   lang_subtitle: 'தொடர உங்கள் விருப்பமான மொழியை தேர்ந்தெடுக்கவும்',

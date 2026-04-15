@@ -149,6 +149,42 @@ const en = {
   trust_workers: '100K+ workers trust us',
   cta_badge: 'Start in 60 seconds',
 
+  // WorkerPortal floating cards
+  wp_card_instant_payout: 'Instant Payout',
+  wp_card_coverage: 'Coverage',
+  wp_card_coverage_val: 'Active · 24/7',
+  wp_card_disruption: 'Disruption Detected',
+  wp_card_disruption_val: 'Heavy Rain · Zone 4',
+  wp_card_claim_processed: 'Claim Processed',
+  wp_card_claim_val: 'In 2 minutes',
+  wp_card_risk: 'Risk Score',
+  wp_card_risk_val: '0.82 · HIGH',
+  wp_card_platform: 'Platform',
+  wp_card_platform_val: 'Online · Active',
+  wp_card_protected: 'Protected by Carely · AI-Powered',
+
+  // WorkerPortal plans tab
+  wp_plan_coverage_days: 'day coverage',
+  wp_plan_coverage_days_plural: 'days coverage',
+  wp_plan_max_payout: 'max payout',
+  wp_plan_instant_claim: 'Instant claim processing',
+  wp_plan_ai_fraud: 'AI fraud protection',
+  wp_plan_priority: 'Priority support',
+  wp_plan_zone: 'Zone-adaptive triggers',
+  wp_plan_period_day: 'day',
+  wp_plan_period_week: 'week',
+  wp_plan_period_month: 'month',
+  wp_plan_upto: 'Up to',
+  wp_plan_payout_suffix: 'payout',
+
+  // WorkerPortal claims table
+  wp_col_claim: 'Claim',
+  wp_col_amount: 'Amount',
+  wp_col_date: 'Date',
+  wp_col_status: 'Status',
+  wp_no_claims_title: 'No Claims Yet',
+  wp_no_claims_desc: 'When a disruption is detected in your zone, claims will appear here automatically.',
+
   // Language picker
   lang_title: 'Choose Your Language',
   lang_subtitle: 'Select your preferred language to continue',
